@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# REACT Question for Daniel Johnson
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## The Challenge
 
-In the project directory, you can run:
+Let's write a little component in React, OrderedList, which implements an alphabetically sorted list. The component will include a button to enable the user to sort either in ascending or descending order and a second button to permit the list to be cleared.
 
-### `npm start`
+Your component should render specific elements according to the following specifications:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* An <input /> element which the user can use to add items to the list. This input field should listen for Enter keydown events (the test suite triggers the onKeyDown event handler specifically) to add the current contents (if nonempty) to the list. After adding an item, the input box should be cleared.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* A <button> element which the user can click to change the direction of the sort. Initially, the button should display text such as the ⬇️ emoji or the text down. When changed to a descending sort, the button should change to a ⬆️ emoji (or text such as up). 
 
-### `npm test`
+* A <button> element which the user can click to clear the list as well as any contents in the input box (essentially reverting to the component's default state). Use any text you'd like for this button.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* A <ul> element, which should contain a series of <li> elements that represent the sorted list contents.
 
-### `npm run build`
+There is no predetermined correct answer for style and CSS. Your solution need not look like the demo below but it should demonstrate understanding of basic CSS and user experience principles.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## What we are looking for
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Correctness - will your solution produce the desired results
+2. Conciseness - does your solution balance clarity and brevity
+3. Maintainability - does your code stand up to changing needs
+4. Anti-patterns - does your solution avoid anti-patterns
 
-### `npm run eject`
+## How to submit
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Please submit a clonable git repository URL with README if applicable.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What to expect
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+After you submit your work, our team will review it. If the solution matches what we are looking for, we will schedule a time to discuss the solution with you. During this time we will ask you to share your screen and potentially do some modifications.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## SOLUTION
 
-## Learn More
+This app uses create-react-app as a starting point to set up a basic app template. From there, I imported my challenge solution as a React component inside of App.js.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Veritone List
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This component returns two sections. Firstly, the 'InputSection' has an input for adding list items, reversing the list sort order alphabetically, and resetting the list and input. Secondly, the 'UnorderListSection' maps out every list item alphabetically in the desired order.
 
-### Code Splitting
+This component also contains useState hooks for setting the list items in 'listArray' and the setting the value for 'itemInput' used by the input field. There is also a hook for setting the boolean value for 'descending'.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The first arrow funtion, 'addItem', adds a new string to the end of 'listArray' without mutating it when the user presses down on the Enter key. The second function will set the listArray to an empty array and set the itemInput to an empty string.
 
-### Analyzing the Bundle Size
+### Styles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Along with a basic css file, I opted to use Styled Components as a personal preferrence for styling the app.
